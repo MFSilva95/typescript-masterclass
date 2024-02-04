@@ -28,4 +28,27 @@ const randomAddress = getAddress(addresses);
 console.log(randomAddress);
 // union types
 let someId;
-//13
+const user = {
+    id: 1,
+    format() {
+        return `This user has an id of ${this.id}`;
+    }
+};
+const bill = {
+    id: 2,
+    amount: 50,
+    server: 'Pedro',
+    format() {
+        return `Bill with id ${this.id} has ${this.amount} to pay!`;
+    }
+};
+function printFormatted(val) {
+    console.log(val.format());
+}
+function printBill(bill) {
+    console.log('server name is', bill.server);
+    console.log(bill.format());
+}
+printFormatted(user);
+printFormatted(bill);
+printBill(bill);
